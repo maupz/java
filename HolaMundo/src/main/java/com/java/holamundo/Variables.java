@@ -12,10 +12,10 @@ package com.java.holamundo;
 public class Variables {
     public static void main (String[] args) {
         int variableEntera = 10;
-        System.out.println("Variable Entera Original" + variableEntera);
+        System.out.println("Variable Entera Original: " + variableEntera);
         // Modificar el valor de la variable
         variableEntera = 20;
-        System.out.println("Variable Entera modificada" + variableEntera);
+        System.out.println("Variable Entera Modificada: " + variableEntera);
         String cadena = "Hola";
         System.out.println(cadena);
         String usuario = "Mauricio";
