@@ -12,13 +12,9 @@ import java.util.Scanner;
  * @author Mauricio
  */
 public class Variables {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
         // Byte size
+        System.out.println(".:Laboratorio 1-3:.");
         byte numeroByte = 1;
         System.out.println("Valor Byte: " + numeroByte);
         System.out.println("Valor Mínimo de un BYTE: " + Byte.MIN_VALUE);
@@ -51,21 +47,24 @@ public class Variables {
         
         // Crear 3 Var
         // Asignar valores int, double, float y ver como los reconoce java
+        System.out.println(".:Laboratorio 4:.");
         var debugInt = 1;
         var debugDouble = 3.14;
         var debugFloat = 5.567223F;
         System.out.println("Debug int: " + debugInt);
         System.out.println("Debug double: " + debugDouble);
         System.out.println("Debug float: " + debugFloat);
+        
         // Laboratorio 5
         Laboratorio5();        
     }
 
     private static void Laboratorio5() {
         Scanner consola = new Scanner(System.in);
+        System.out.println(".:Laboratorio 5:.");
         System.out.println("Introduzca la edad: ");
-        String edadString = consola.nextLine();
-        var edadInt = Integer.parseInt(edadString);
+        //String edadString = consola.nextLine();
+        var edadInt = Integer.parseInt(consola.nextLine());
         System.out.println("La edad es: " + edadInt);
     }
     
