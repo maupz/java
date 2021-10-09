@@ -5,6 +5,8 @@
  */
 package variables;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Mauricio
@@ -36,6 +38,35 @@ public class Variables {
         System.out.println("Valor Long: " + numeroLong);
         System.out.println("Valor Mínimo de un LONG: " + Long.MIN_VALUE);
         System.out.println("Valor Máximo de un LONG: " + Long.MAX_VALUE);
+        // Float size
+        float numeroFloat = 3.1416F;
+        System.out.println("Valor Float: " + numeroFloat);
+        System.out.println("Valor Mínimo de un FLOAT: " + Float.MIN_VALUE);
+        System.out.println("Valor Máximo de un FLOAT: " + Float.MAX_VALUE);
+        // Double size
+        double numeroDouble = 2.7114;
+        System.out.println("Valor Double: " + numeroDouble);
+        System.out.println("Valor Mínimo de un DOUBLE: " + Double.MIN_VALUE);
+        System.out.println("Valor Máximo de un DOUBLE: " + Double.MAX_VALUE);
+        
+        // Crear 3 Var
+        // Asignar valores int, double, float y ver como los reconoce java
+        var debugInt = 1;
+        var debugDouble = 3.14;
+        var debugFloat = 5.567223F;
+        System.out.println("Debug int: " + debugInt);
+        System.out.println("Debug double: " + debugDouble);
+        System.out.println("Debug float: " + debugFloat);
+        // Laboratorio 5
+        Laboratorio5();        
+    }
+
+    private static void Laboratorio5() {
+        Scanner consola = new Scanner(System.in);
+        System.out.println("Introduzca la edad: ");
+        String edadString = consola.nextLine();
+        var edadInt = Integer.parseInt(edadString);
+        System.out.println("La edad es: " + edadInt);
     }
     
 }
