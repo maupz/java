@@ -18,7 +18,9 @@ public class Carro {
     
     
     public void desplegarInfo() {
-        
-    
+        System.out.println("Marca: " + Marca);
+        System.out.println("Modelo: " + Modelo);
+        System.out.println("Año: " + a_n);
+        System.out.println("Kilometraje: " + kilometraje);
     }
 }
