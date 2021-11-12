@@ -19,18 +19,39 @@ public class Persona {
     private double peso = 0;
     private double altura = 0;
 
-    // Constructores
+    // Constructor
     public Persona() {
         System.out.println("Ejecutando constructor simple");
     }
     
+    // Constructor 3 Atributos
     public Persona(String nombre, int edad, char sexo) {
         System.out.println("Ejecutando constructor con argumentos");
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
     }
+    
+    // Constructor con todos los atributos
+    public Persona(String nombre, int edad, char sexo, String cedula, double peso, double altura) {
+        System.out.println("Ejecutando constructor con argumentos");
+        this.nombre = nombre;
+        this.edad = edad;
+        this.sexo = sexo;
+        this.cedula = cedula;
+        this.peso = peso;
+        this.altura = altura;
+    }
 
+    // Metodos
+
+    @Override
+    public String toString() {
+        return "Persona{" + "nombre=" + nombre + ", edad=" + edad + ", cedula=" + cedula + ", sexo=" + sexo + ", peso=" + peso + ", altura=" + altura + '}';
+    }
+    
+    
+    
     // Sets & Gets
     /**
      * Get the value of altura
