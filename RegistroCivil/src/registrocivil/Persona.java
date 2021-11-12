@@ -5,6 +5,8 @@
  */
 package registrocivil;
 
+import java.util.Random;
+
 /**
  *
  * @author Mauricio Jimenez
@@ -14,10 +16,10 @@ public class Persona {
     // Atributos
     private String nombre = "";
     private int edad = 0;
-    private String cedula = "";
+    private int cedula;
     private char sexo = 'H';
-    private double peso = 0;
-    private double altura = 0;
+    private double peso = 1;
+    private double altura = 1;
 
     // Constructor
     public Persona() {
@@ -33,7 +35,7 @@ public class Persona {
     }
     
     // Constructor con todos los atributos
-    public Persona(String nombre, int edad, char sexo, String cedula, double peso, double altura) {
+    public Persona(String nombre, int edad, char sexo, int cedula, double peso, double altura) {
         System.out.println("Ejecutando constructor con argumentos");
         this.nombre = nombre;
         this.edad = edad;
@@ -44,13 +46,60 @@ public class Persona {
     }
 
     // Metodos
-
+    
+    //toString(): devuelve toda la información del objeto.
     @Override
     public String toString() {
         return "Persona{" + "nombre=" + nombre + ", edad=" + edad + ", cedula=" + cedula + ", sexo=" + sexo + ", peso=" + peso + ", altura=" + altura + '}';
     }
     
+    // generaCedula(): Genera un número aleatorio de 9 cifras.
+    public static int generaCedula(){
+        Random random = new Random();
+        return random.nextInt(999999999 - 100000000) + 100000000;
+    }
     
+    // comprobarSexo(char sexo): comprueba que el sexo introducido es correcto. Si no es correcto, será H.
+    public static char comprobarSexo(char sexo) {
+        if (sexo == 'H' || sexo == 'M') {
+            System.out.println("El sexo es correcto: " + sexo);
+            return sexo;
+        } else {
+            System.out.println("El sexo es incorrecto. Se asignará el valor H");
+            return 'H';
+        }
+    }
+    
+    // esMayorDeEdad(): indica si es mayor de edad, devuelve un booleano.
+    public boolean esMayorDeEdad() {
+        if (this.getEdad() >= 18) {
+            System.out.println("Sí es mayor de edad: " + Integer.toString(this.getEdad()));
+            return true;
+        } else {
+            System.out.println("No es mayor de edad: " + Integer.toString(this.getEdad()));
+            return false;
+        }
+    }
+    
+    // calcularIMC(): calculara si la persona está en su peso ideal (peso en kg/(altura^2)  en m)) 
+    //   ejemplo 90/(1.82)2=27.17, si esta fórmula devuelve un valor menor que 20, la función devuelve un -1 
+    //   significa que está por debajo de su peso ideal , 
+    //   si devuelve un número entre 20 y 25 (incluidos) significa que está en su peso ideal y la función devuelve un 0  
+    //   y si devuelve un valor mayor que 25 significa que tiene sobrepeso, la función devuelve un 1.
+    public int calcularIMC(){
+        double IMC;
+        IMC = this.getPeso() / (this.getAltura() * this.getAltura());
+        if (IMC < 20) {
+            System.out.println("Se encuentra por debajo del peso ideal. IMC = " + IMC);
+            return -1;
+        } else if (IMC >= 20 && IMC <= 25){
+            System.out.println("Se encuentra en el peso ideal. IMC = " + IMC);
+            return 0;
+        } else {
+            System.out.println("Se encuentra con sobrepeso. IMC = " + IMC);
+            return 1;
+        }
+    }
     
     // Sets & Gets
     /**
@@ -104,7 +153,8 @@ public class Persona {
      * @param sexo new value of sexo
      */
     public void setSexo(char sexo) {
-        this.sexo = sexo;
+        char s = Persona.comprobarSexo(sexo);
+        this.sexo = s;
     } 
 
     /**
@@ -112,7 +162,7 @@ public class Persona {
      *
      * @return the value of cedula
      */
-    public String getCedula() {
+    public int getCedula() {
         return cedula;
     }
 
@@ -121,7 +171,7 @@ public class Persona {
      *
      * @param cedula new value of cedula
      */
-    public void setCedula(String cedula) {
+    public void setCedula(int cedula) {
         this.cedula = cedula;
     }
 
