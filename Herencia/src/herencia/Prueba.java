@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package encapsulamiento;
+package herencia;
 
 /**
  *
  * @author Mauricio Jimenez
  */
-public class Encapsulamiento {
+public class Prueba {
 
     /**
      * @param args the command line arguments
