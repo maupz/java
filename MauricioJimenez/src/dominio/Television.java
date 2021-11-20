@@ -12,6 +12,7 @@ public class Television extends Electrodomestico {
     private double pulgadas = 20;
     private boolean sintonizador = false;
 
+    // Constructores
     public Television() {
     }
 
@@ -24,7 +25,19 @@ public class Television extends Electrodomestico {
         this.pulgadas = pulgadas;
         this.sintonizador = sintonizador;
     }
-
+    
+    // Calcular precioFinal()
+    @Override
+    public double precioFinal() {
+        double precioFinal = super.precioFinal();
+        if (pulgadas >= 40) {
+            precioFinal = precioFinal * 1.3;
+        }
+        if (sintonizador) {
+            precioFinal = precioFinal + 50;
+        }
+        return precioFinal;
+    }
     
     
     // Gets
@@ -34,6 +47,11 @@ public class Television extends Electrodomestico {
 
     public boolean isSintonizador() {
         return sintonizador;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Television{" + "pulgadas=" + pulgadas + ", sintonizador=" + sintonizador + '}';
     }
     
     

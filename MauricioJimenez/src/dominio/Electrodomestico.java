@@ -50,7 +50,7 @@ public class Electrodomestico {
                 this.color = color;
             break;
             default:
-                this.color = "blanco";            
+                this.color = "Blanco";            
         }                 
     }
     // precioFinal(): según el consumo energético, aumentara su precio, y según su tamaño, también.

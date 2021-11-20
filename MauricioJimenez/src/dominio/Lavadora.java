@@ -42,5 +42,10 @@ public class Lavadora extends Electrodomestico{
         }
         return super.precioFinal();
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Lavadora{" + "carga=" + carga + '}';
+    }
     
 }
