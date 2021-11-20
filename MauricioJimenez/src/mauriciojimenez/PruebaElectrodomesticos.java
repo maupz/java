@@ -5,6 +5,7 @@
 package mauriciojimenez;
 
 import dominio.Electrodomestico;
+import dominio.Lavadora;
 
 /**
  *
@@ -25,8 +26,19 @@ public class PruebaElectrodomesticos {
         
         for (int i=0; i < electrodomesticos.length; i++) {
             System.out.println("Electrodomestico #" + i + "= " + electrodomesticos[i].toString());
+            System.out.println("Electrodomestico #" + i + " Precio Final = " + electrodomesticos[i].precioFinal());
         }
         
+        Lavadora[] lavadoras;
+        lavadoras = new Lavadora[3];
+        lavadoras[0] = new Lavadora();
+        lavadoras[1] = new Lavadora(100, "Azul", 'D', 20,5);
+        lavadoras[2] = new Lavadora(200, "Gris", 'E', 30,40);
+        
+        for (int i=0; i < lavadoras.length; i++) {
+            System.out.println("Lavadora #" + i + "= " + lavadoras[i].toString());
+            System.out.println("Lavadora #" + i + " Precio Final = " + lavadoras[i].precioFinal());
+        }
     }
     
 }
