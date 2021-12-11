@@ -18,7 +18,7 @@ public class PruebaElectrodomesticos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Crear Electrodomesticos
         Electrodomestico[] electrodomesticos;
         electrodomesticos = new Electrodomestico[3];
         electrodomesticos[0] = new Electrodomestico();
